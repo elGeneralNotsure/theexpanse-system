@@ -1,0 +1,6 @@
+<form class="theexpanse-system item-chat-controls colorset-{{colorScheme}} colorset-selection flexrow feature-controls" data-item-id="{{itemId}}" data-owner-uuid="{{ownerUuid}}" autocomplete="off">
+    <button type="button" class="roll-item theexpanse-button attack">{{localize "theexpanse-system.chatCard.roll"}}</button>
+    {{#if (or item.hasDamage item.hasHealing)}}
+    <button type="button" class="roll-item damage">{{#if item.hasDamage}}{{localize "theexpanse-system.chatCard.rollDamage"}}{{else}}{{localize "theexpanse-system.chatCard.rollHealing"}}{{/if}}</button>
+    {{/if}}
+</form>

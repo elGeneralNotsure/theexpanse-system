@@ -1,0 +1,44 @@
+<form>
+    
+    {{#if selectAbl}}
+    <div class="form-group">
+        <label>Select Alternate Ability</label>
+        <select name="selectedAbl">
+            {{#select selectedAbl}}
+            <option value="no-abl">—</option>
+            {{#each abilitiesArray as |alternate|}}
+            <option value="{{alternate.ability}}">{{alternate.name}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+    {{/if}}
+
+    <div class="form-group">
+        <label>{{localize "theexpanse-system.setTheExpanseRollMod"}}</label>
+        <input type="number" name="theexpanseRollMod" placeholder="{{localize "theexpanse-system.setTheExpanseRollMod"}}" value=""/>
+    </div> 
+
+    {{#if (eq itemType 'weapon')}}
+    <div class="form-group">
+        <label>{{localize "theexpanse-system.setTheExpanseRollAtkDmgTradeOff"}}</label>
+        <input type="number" name="atkDmgTradeOff" placeholder="{{localize "theexpanse-system.penaltyToDamage"}}" value=""/>
+    </div>
+    {{/if}}
+
+    {{#if (or (ne itemType 'weapon') (and (eq itemType 'weapon') (eq targetNumber null)))}}
+    <div class="form-group">
+        <label>{{localize "theexpanse-system.setTheExpanseRollTN"}}</label>
+        <input type="number" name="rollTN" value="{{targetNumber}}" placeholder="{{localize "theexpanse-system.setTheExpanseRollTN"}}"/>
+    </div>
+    {{/if}}
+
+    <hr>
+    
+    {{!-- TODO - ADD OPTION OF BLIND ROLL, ROLL TO GM, PUBLIC ROLL --}}
+    {{!-- <div class="form-group">
+        <input type="checkbox" name="gmRoll" {{checked gmRoll}}/>
+        <label>{{localize "theexpanse-system.settings.gmRoll"}}</label>
+    </div> --}}
+
+</form>
