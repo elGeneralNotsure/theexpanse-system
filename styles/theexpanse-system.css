@@ -1122,9 +1122,7 @@
 .theexpanse-system.sheet.char.standard .general-stats input[type="number"] {
   max-height: 26px;
 }
-.theexpanse-system.sheet.char.standard .general-stats > div {
-  margin-bottom: 4px;
-}
+
 .theexpanse-system.sheet.char.standard .general-stats .top-row {
   margin-bottom: 2px;
 }
@@ -1190,6 +1188,13 @@
   min-width: 25px;
   max-height: 16px;
   text-align: center;
+}
+
+.theexpanse-system.sheet.char.standard .social-row{
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  grid-column-gap: 2%;
+  grid-row-gap: 5px;
 }
 
 .theexpanse-system.sheet.char.standard .ability-row {

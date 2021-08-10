@@ -251,6 +251,8 @@
         "testThreshold": "Threshold",
         "targetCurrent": "Target/Current",
         "charMain": "Main",
+        "charEquipment": "Equipment",
+        "charTalent": "Talents, Specializations & Stunts",
         "charPersona": "Persona",
         "bio": "Description & Biography",
         "goals": "Goals",

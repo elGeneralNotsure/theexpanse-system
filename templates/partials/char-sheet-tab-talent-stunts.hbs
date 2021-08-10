@@ -1,0 +1,42 @@
+{{!-- Talent Block --}}
+<div class="item-container">
+    <div class="top-row colorset-first-tier">{{localize "theexpanse-system.talentContainer"}}</div>
+    <div class="actor-items flexrow">
+    {{#each data.talent as |item id|}}
+        <div class="item-box flexrow feature-controls colorset-third-tier" data-item-id="{{item._id}}">
+            <div class="item-card flexrow">
+                <div class="main-data flexrow">
+                    <img class="item-image" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                    <a class="item-show item-name">{{item.name}}{{#if item.data.shortDesc}} ({{item.data.shortDesc}}){{/if}}</a>
+                </div>
+                <div class="controls flexrow">
+                    <a class="item-control item-equip {{#unless item.data.activate}} not-equiped{{/unless}}" title="{{localize "theexpanse-system.settings.equip"}}"><i class="fas fa-shield-alt"></i></a>
+                    <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                    <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+    </div>
+</div>
+
+{{!-- Stunts' Container --}}
+<div class="item-container">
+    <div class="top-row colorset-first-tier">{{localize "theexpanse-system.stuntsContainer"}}</div>
+    <div class="actor-items flexrow">
+    {{#each data.stunts as |item id|}}
+        <div class="item-box flexrow feature-controls colorset-third-tier" data-item-id="{{item._id}}">
+            <div class="item-card flexrow">
+                <div class="main-data flexrow">
+                    <img class="item-image" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                    <a class="item-show item-name">[{{item.data.stuntPoints}} {{localize "theexpanse-system.settings.stuntPointsIndex"}}] {{item.name}}</a>
+                </div>
+                <div class="controls flexrow">
+                    <a class="item-control item-edit" title="{{localize "theexpanse-system.settings.edit"}}"><i class="fas fa-edit"></i></a>
+                    <a class="item-control item-delete" title="{{localize "theexpanse-system.settings.delete"}}"><i class="fas fa-trash"></i></a>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+    </div>
+</div>

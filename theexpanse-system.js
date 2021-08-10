@@ -35,6 +35,8 @@ async function preloadHandlebarsTemplates() {
         `${path}conditions-block.hbs`,
         `${path}char-sheet-nav-bar.hbs`,
         `${path}char-sheet-tab-main.hbs`,
+        `${path}char-sheet-tab-equipment.hbs`,
+        `${path}char-sheet-tab-talent-stunts.hbs`,
         `${path}char-sheet-tab-persona.hbs`,
         `${path}char-sheet-tab-effects.hbs`,
         `${path}item-card-buttons.hbs`,
