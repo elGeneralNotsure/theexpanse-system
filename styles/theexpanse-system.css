@@ -893,14 +893,37 @@
 }
 .theexpanse-system.sheet.char.standard .sheet-header h1.charname {
   margin-bottom: 4px;
+  display: inline-flex;
 }
 .theexpanse-system.sheet.char.standard .sheet-header h1.charname > input[name="name"] {
   margin: 0px;
+  margin-right: auto;
   padding: 10px 5px;
+  width: 85%;
+}
+
+.theexpanse-system.sheet.char.standard .sheet-header h1.charname .level-xp {
+  float: left;
+  width: 12%;
+}
+
+.theexpanse-system.sheet.char.standard .sheet-header h1.charname .level-xp label {
+  text-align: center;
+  font-size: medium;
+  background-color: #0f4f5b;
+  color: #ffffff;
   width: 100%;
 }
+
+.theexpanse-system.sheet.char.standard .sheet-header h1.charname .level-xp input[type="number"] {
+  text-align: center;
+  font-size: medium;
+  height: 29px;
+  margin: 0px;
+}
+
 .theexpanse-system.sheet.char.standard .sheet-header img {
-  height: 198px;
+  height: 142px;
   width: 150px;
   object-fit: contain;
   border: 0px;
@@ -912,9 +935,12 @@
 .theexpanse-system.sheet.char.standard .sheet-header .theexpanse-header > div {
   margin-bottom: 4px;
 }
-.theexpanse-system.sheet.char.standard .sheet-header .theexpanse-header .level-xp input[type="number"] {
-  text-align: center;
+
+.theexpanse-system.sheet.char.standard .sheet-header .theexpanse-header .flexrow > div {
+  display: flex;
+  margin-right: 2px;
 }
+
 .theexpanse-system.sheet.char.standard .sheet-header .theexpanse-header label {
   white-space: nowrap;
   max-width: fit-content;
@@ -963,7 +989,8 @@
 .theexpanse-system.sheet.char.standard .persona .language.container,
 .theexpanse-system.sheet.char.standard .persona .features.container,
 .theexpanse-system.sheet.char.standard .persona .secret-note.container {
-  height: 150px;
+  min-height: 100px;
+  max-height: 150px;
 }
 .theexpanse-system.sheet.char.standard .persona label {
   white-space: nowrap;
@@ -972,7 +999,7 @@
   flex: 0 0 fit-content;
 }
 .theexpanse-system.sheet.char.standard .persona .editor.editor {
-  min-height: 300px;
+  min-height: 150px;
   max-height: 600px;
   height: 100%;
   padding: 4px;
@@ -980,7 +1007,7 @@
   border-radius: 4px;
 }
 .theexpanse-system.sheet.char.standard .persona .editor.editor .tox.tox-tinymce {
-  min-height: 290px !important;
+  min-height: 140px !important;
   max-height: 590px !important;
 }
 .theexpanse-system.sheet.char.standard .item-container ul {
@@ -1062,8 +1089,8 @@
 .theexpanse-system.sheet.char.standard input[type="checkbox"] {
   margin: 0px;
   margin-top: 1px;
-  width: 16px;
-  height: 16px;
+  width: 10px;
+  height: 10px;
 }
 .theexpanse-system.sheet.char.standard .resource-box {
   display: flex;
@@ -1164,32 +1191,38 @@
   max-height: 16px;
   text-align: center;
 }
-.theexpanse-system.sheet.char.standard .col-1 {
-  max-width: 200px;
+
+.theexpanse-system.sheet.char.standard .ability-row {
+  padding: 1%;
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  grid-column-gap: 2%;
+  grid-row-gap: 5px;
 }
-.theexpanse-system.sheet.char.standard .col-1 .ability-box:last-of-type {
+
+.theexpanse-system.sheet.char.standard .ability-row .ability-box:last-of-type {
   border-bottom: solid grey 1px;
 }
-.theexpanse-system.sheet.char.standard .col-1 .ability-box {
+.theexpanse-system.sheet.char.standard .ability-row .ability-box {
   border: solid grey 1px;
   border-bottom: none;
 }
-.theexpanse-system.sheet.char.standard .col-1 .ability-box .abl-header {
+.theexpanse-system.sheet.char.standard .ability-row .ability-box .abl-header {
   align-items: center;
 }
-.theexpanse-system.sheet.char.standard .col-1 .ability-box .abl-header .abl-name {
+.theexpanse-system.sheet.char.standard .ability-row .ability-box .abl-header .abl-name {
   padding-left: 4px;
   min-width: fit-content;
   height: max-content;
   flex-grow: 3;
 }
-.theexpanse-system.sheet.char.standard .col-1 .ability-box .abl-header .primary-secondary,
-.theexpanse-system.sheet.char.standard .col-1 .ability-box .abl-header .last-up {
+.theexpanse-system.sheet.char.standard .ability-row .ability-box .abl-header .primary-secondary,
+.theexpanse-system.sheet.char.standard .ability-row .ability-box .abl-header .last-up {
   height: 1em;
   justify-self: end;
   margin: 0px;
 }
-.theexpanse-system.sheet.char.standard .col-1 .ability-box input[type="number"].abl-value {
+.theexpanse-system.sheet.char.standard .ability-row .ability-box input[type="number"].abl-value {
   border-radius: 0%;
   border: none;
   border-left: 1px solid grey;
@@ -1200,24 +1233,26 @@
   text-align: center;
   font-size: 15px;
 }
-.theexpanse-system.sheet.char.standard .col-1 .ability-box .owned-focus {
+.theexpanse-system.sheet.char.standard .ability-row .ability-box .owned-focus {
   padding: 4px;
   min-height: 2em;
   width: 100%;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: stretch;
+  background-color: #ffffff;
 }
-.theexpanse-system.sheet.char.standard .col-1 .ability-box .owned-focus .improved-focus {
+.theexpanse-system.sheet.char.standard .ability-row .ability-box .owned-focus .improved-focus {
   text-decoration: underline;
 }
-.theexpanse-system.sheet.char.standard .col-1 .ability-box .owned-focus .item-name {
+.theexpanse-system.sheet.char.standard .ability-row .ability-box .owned-focus .item-name {
   font-size: 14px;
   border-radius: 5px;
   margin: 2px;
   vertical-align: middle;
   text-align: center;
 }
+
 .theexpanse-system.sheet.char.standard .col-2 {
   margin-left: 4px;
 }

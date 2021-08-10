@@ -5,57 +5,56 @@
             
             <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
             <div>
-                <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder={{localize "theexpanse-system.name"}}/></h1>        
-
+                <h1 class="charname">
+                    <input name="name" type="text" value="{{actor.name}}" placeholder={{localize "theexpanse-system.name"}}/>       
+                    <div class="flexrow level-xp">
+                            <label for="">{{localize "theexpanse-system.level"}}</label>
+                            <input type="number" name="data.level" value="{{data.data.level}}" data-dtype="Number" />
+                    </div>
+                </h1> 
                 {{!-- General Character Information --}}
                 <div class="theexpanse-header">  
                     <div class="flexrow">
-                        <label for="">{{localize "theexpanse-system.age"}}</label>
-                        <input type="text" name="data.age" value="{{data.data.age}}">
-
-                        <label for="">{{localize "theexpanse-system.height"}}</label>
-                        <input type="text" name="data.height" value="{{data.data.height}}">
-                        
-                        <label for="">{{localize "theexpanse-system.weight"}}</label>
-                        <input type="text" name="data.weight" value="{{data.data.weight}}">  
-
+                        <div>
+                            <label for="">{{localize "theexpanse-system.socialClass"}}</label>
+                            <input type="text" name="data.socialClass" value="{{data.data.socialClass}}">
+                        </div>
+                        <div>
+                            <label for="">{{localize (concat "SETTINGS.ancestryOpt" data.ancestry)}}</label>
+                            <input type="text" name="data.ancestry" value="{{data.data.ancestry}}">
+                        </div>
                     </div>
 
                     <div class="flexrow">
-                        <label for="">{{localize "theexpanse-system.background"}}</label>
-                        <input type="text" name="data.background" value="{{data.data.background}}">
-                        
-                        <label for="">{{localize (concat "SETTINGS.ancestryOpt" data.ancestry)}}</label>
-                        <input type="text" name="data.ancestry" value="{{data.data.ancestry}}"> 
-                    </div>
+                        <div>
+                            <label for="">{{localize "theexpanse-system.background"}}</label>
+                            <input type="text" name="data.background" value="{{data.data.background}}">
+                        </div>
+                        <div>
+                            <label for="">{{localize (concat "SETTINGS.occ" data.occupation)}}</label>
+                            <input type="text" name="data.profession" value="{{data.data.profession}}">
+                        </div>
+                    </div>                   
                     
-                    <div class="flexrow">
-                        <label for="">{{localize "theexpanse-system.socialClass"}}</label>
-                        <input type="text" name="data.socialClass" value="{{data.data.socialClass}}">
-                    </div>
-                    
-                    <div class="flexrow">
-                        <label for="">{{localize (concat "SETTINGS.occ" data.occupation)}}</label>
-                        <input type="text" name="data.profession" value="{{data.data.profession}}">          
-                    </div>
-
-                    {{!-- Level / XP block --}}
-                    <div class="flexrow level-xp">
-                        <label for="">{{localize "theexpanse-system.level"}}</label>
-                        <input type="number" name="data.level" value="{{data.data.level}}" data-dtype="Number" />
-
-                        <label>{{localize "theexpanse-system.currentLevel"}}</label>
-                        <input type="number" number-type="five-digits" name="data.xp.value" value="{{data.data.xp.value}}" data-dtype="Number" />
-                            
-                        <label>{{localize "theexpanse-system.nextLevel"}}</label>
-                        <input type="number" number-type="five-digits" name="data.xp.next" value="{{data.data.xp.next}}" data-dtype="Number" />
-
-                    </div>
+                  <div class="flexrow">
+                        <div>
+                            <label for="">{{localize "theexpanse-system.drive.drive"}}</label>
+                            <input type="text" name="data.drive.name" value="{{data.data.drive.name}}">          
+                        </div>
+                        <div>
+                            <label for="">{{localize "theexpanse-system.drive.quality"}}</label>
+                            <input type="text" name="data.drive.quality" value="{{data.data.drive.quality}}">          
+                        </div>
+                        <div>
+                            <label for="">{{localize "theexpanse-system.drive.downfall"}}</label>
+                            <input type="text" name="data.drive.downfall" value="{{data.data.drive.downfall}}">     
+                        </div>  
+                    </div>                 
                 </div>
             </div>
 
         </header>
-        
+         {{> "systems/theexpanse-system/templates/partials/conditions-block.hbs"}}
         {{!-- Navigaton Bar and Tabs --}}
         {{> "systems/theexpanse-system/templates/partials/char-sheet-nav-bar.hbs"}}
     </div>

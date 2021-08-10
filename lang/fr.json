@@ -252,7 +252,7 @@
 		"targetCurrent": "Cible/Actuel",
         "charMain": "Principal",
         "charPersona": "Personnage",
-        "bio": "Biographie",
+        "bio": "Description & Biographie",
         "goals": "Objectifs",
         "language": "Langues",
         "secretNote": "Notes secrètes (MJ & Joueur)",
@@ -351,6 +351,8 @@
         "defendManeuver": "Défense",
         "guardUp": "Garde",
         "initiative": "Initiative",
+        "initiativeplayaid": "Init",
+        "modplayaid": "Mod",
 		"stuntDie": "Dé de Prouesse (Dragon)",
         "stuntDieIndex": "DP/DD",
 

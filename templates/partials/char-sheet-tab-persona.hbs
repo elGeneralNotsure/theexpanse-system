@@ -1,15 +1,6 @@
 {{!-- Persona Tab --}}
 
-<div class="flexrow container">
-    <label for="">{{localize "theexpanse-system.drive.drive"}}</label>
-    <input type="text" name="data.drive.name" value="{{data.data.drive.name}}">          
 
-    <label for="">{{localize "theexpanse-system.drive.quality"}}</label>
-    <input type="text" name="data.drive.quality" value="{{data.data.drive.quality}}">          
-
-    <label for="">{{localize "theexpanse-system.drive.downfall"}}</label>
-    <input type="text" name="data.drive.downfall" value="{{data.data.drive.downfall}}">          
-</div>
 
 <div class="flexrow goals-language">
     <div class="flexcol goals container">
@@ -23,9 +14,9 @@
     </div>
 </div>
 
-<div class="flexcol features container">
-    <label for="">{{localize "theexpanse-system.features"}}</label>
-    <textarea class="free-text" name="data.traits">{{data.data.traits}}</textarea>
+<div class="flexcol bio container">
+    <label for="">{{localize "theexpanse-system.bio"}}</label>
+    {{editor content=data.data.features target="data.features" button=true owner=owner editable=editable}}
 </div>
 
 {{#if isGM}}
@@ -41,8 +32,3 @@
     <textarea class="free-text" name="data.secretNote">{{data.data.secretNote}}</textarea>
 </div>
 {{/if}}
-
-<div class="flexcol bio container">
-    <label for="">{{localize "theexpanse-system.bio"}}</label>
-    {{editor content=data.data.features target="data.features" button=true owner=owner editable=editable}}
-</div>

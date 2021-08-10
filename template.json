@@ -265,8 +265,8 @@
             },
             "health": {
                 "min": 0,
-                "value": 35,
-                "set": 35
+                "value": 15,
+                "set": 15
             },
             "powerPoints": {
                 "min": 0,
