@@ -190,7 +190,7 @@ export const registerSystemSettings = function() {
     hint: "SETTINGS.colorSchemeHint",
     scope: "client",
     config: true,
-    default: "the-grey",
+    default: "fantasy-blue",
     type: String,
     choices: {
       "modern-blue": "SETTINGS.colorModernBlue",

@@ -3685,17 +3685,27 @@
 body *:not(i) {
   font-family: 'Roboto' !important;
 }
+
+.window-app .window-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  background: #b8d4dc;
+  padding: 8px;
+  color: #191813;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 /*---------Background---------------------*/
 .window-app.sheet.char .window-content,
 .window-app.sheet.vehicle .window-content,
 .window-app.sheet.spaceship .window-content {
   background-image: none;
-  background: none;
-  background-color: rgba(207, 194, 188, 0.4);
 }
 .window-app.sheet.item .window-content {
   background-image: none;
-  background: none;
 }
 .theexpanse-system-dialog.bonus-select button.dialog-button {
   flex: 0 0 45%;

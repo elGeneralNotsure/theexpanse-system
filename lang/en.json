@@ -353,6 +353,8 @@
         "defendManeuver": "Defend",
         "guardUp": "Guard Up",
         "initiative": "Initiative",
+        "initiativeplayaid": "Init",
+        "modplayaid": "Mod",
         "stuntDie": "Stunt Die",
         "stuntDieIndex": "SD",
 
@@ -440,7 +442,7 @@
         },
 
         "move": "Move",
-        "level": "Level",
+        "level": "Lvl",
         "xp": "XP",
         "currentLevel": "Actual XP",
         "nextLevel": "Next Level XP",
