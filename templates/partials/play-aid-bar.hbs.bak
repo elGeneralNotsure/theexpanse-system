@@ -67,11 +67,13 @@
     {{#unless isBlock}}
     {{!-- Initiative Mod --}}
     <div class="flexcol flex-align-center">
-        <label>{{localize "theexpanse-system.initiative"}}</label>
         <div class="flexrow no-flexwrap">
-            <input type="number" disabled name="data.initiative" value="{{data.data.initiative}}" data-dtype="Number" />
-            <input type="number" name="data.initiativeMod" value="{{data.data.initiativeMod}}" data-dtype="Number" />
-            <label>{{localize "theexpanse-system.mod"}}</label>
+            <label for="data.initiative">{{localize "theexpanse-system.initiativeplayaid"}}</label>
+            <label for="data.data.initiativeMod">{{localize "theexpanse-system.modplayaid"}}</label>
+        </div>
+        <div class="flexrow no-flexwrap">
+            <input name="data.initiative" type="number" disabled name="data.initiative" value="{{data.data.initiative}}" data-dtype="Number" />
+            <input name="data.data.initiativeMod" type="number" name="data.initiativeMod" value="{{data.data.initiativeMod}}" data-dtype="Number" />
         </div>
     </div>
     {{/unless}}

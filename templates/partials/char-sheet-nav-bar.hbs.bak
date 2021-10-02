@@ -5,9 +5,6 @@
     <a class="char" data-tab="talent">{{localize "theexpanse-system.charTalent"}}</a>
     <a class="char" data-tab="equipment">{{localize "theexpanse-system.charEquipment"}}</a>
     <a class="char" data-tab="persona">{{localize "theexpanse-system.charPersona"}}</a>
-    {{#if data.weaponGroups}}
-        <a class="char" data-tab="options">{{localize "theexpanse-system.charOptions"}}</a>
-    {{/if}}
 </nav>
 
 <section class="sheet-tab-section">
@@ -32,11 +29,9 @@
         {{> "systems/theexpanse-system/templates/partials/char-sheet-tab-persona.hbs"}}
     </div>
 
-     {{#if data.weaponGroups}}
-    {{!-- Options Tab --}}
-    <div class="tab options" data-group="primary" data-tab="options">
-        {{> "systems/theexpanse-system/templates/partials/char-sheet-tab-options.hbs"}}
+    {{!-- Effects Tab --}}
+    <div class="tab effects" data-group="primary" data-tab="effects">
+        {{> "systems/theexpanse-system/templates/partials/char-sheet-tab-effects.hbs"}}
     </div>
-    {{/if}}
 
 </section>

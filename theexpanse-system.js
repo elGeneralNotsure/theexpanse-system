@@ -41,6 +41,7 @@ async function preloadHandlebarsTemplates() {
         `${path}char-sheet-tab-effects.hbs`,
         `${path}item-card-buttons.hbs`,
         `${path}char-stat-block-column1.hbs`,
+        `${path}item-options-sheet.hbs`,
     ];
 
     return loadTemplates(templatePaths);
@@ -180,6 +181,20 @@ Hooks.once("init", async function() {
     Handlebars.registerHelper('carriedequip', function(items) {
         return items.filter(p => p.type === "equipment" || p.type === "weapon")
     })
+
+    
+    // Handlebar to itentify if Weapon Group is know
+    Handlebars.registerHelper('haswgroup', function(wGroup, groupArray) {
+        if (!groupArray === []) return false;
+        return groupArray.includes(wGroup) ? true : false;
+    });
+
+    // Handlebar to build damage summary on chat card
+    Handlebars.registerHelper('termOperator', function(diceTerms, k) {
+        if (k === 0) return ``;
+        const op = diceTerms[k-1].operator;
+        return op === `+` ? `` : op;
+    });
 
     // Handlebar helper to compare 2 data
     Handlebars.registerHelper("when",function(operand_1, operator, operand_2, options) {

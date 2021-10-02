@@ -104,9 +104,6 @@
     "SETTINGS.observerRoll": "Allow Observers to roll",
     "SETTINGS.observerRollHint": "Allow players with Observer permission level to roll from observed sheets and from chat rolls",
 
-     "SETTINGS.weaponGroups": "Weapon Groups",
-    "SETTINGS.weaponGroupsHint": "Input weapon groups name using ; to separate groups. Leave it empty if Weapon Groups are not used (as in Modern AGE)",
-    
     "theexpanse-system": {
 
         "SHEETS": {
@@ -257,13 +254,12 @@
         "charEquipment": "Equipment",
         "charTalent": "Talents, Specializations & Stunts",
         "charPersona": "Persona",
-        "charEffects": "Effects",
-        "charOptions": "Options",
         "bio": "Description & Biography",
         "goals": "Goals",
         "language": "Languages",
         "secretNote": "Player & GM Secret Notes",
         "gmNotes": "GM Secret Notes",
+        "charEffects": "Effects",
         "custom": "Custom",
         "conditionsName": "Conditions",
         "conditions": {
@@ -446,7 +442,7 @@
         },
 
         "move": "Move",
-        "level": "Level",
+        "level": "Lvl",
         "xp": "XP",
         "currentLevel": "Actual XP",
         "nextLevel": "Next Level XP",
@@ -539,7 +535,6 @@
         "thisItemDmgBns": "Item Bonus",
         "rollFatigue": "Roll Fatigue",
         "blindRollSomeone": "You blindly roll to GM",
-		"wgroupPenalty": "Weapon Group Penalty",
         "activationMod": "Roll Bonus",
         "success": "Success",
         "miss": "Miss",

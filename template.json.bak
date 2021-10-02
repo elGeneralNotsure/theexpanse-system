@@ -155,7 +155,6 @@
                 "mod": 0,
                 "total": 10
             },
-            "wgroups": [],
             "defense": {
                 "base": 10,
                 "mod": 0,
@@ -543,8 +542,7 @@
             "capacity": 5,
             "range": 2,
             "rangeMax": "-",
-            "rof": "none",
-            "wgroups": []
+            "rof": "none"
         },
         "power": {
             "templates": ["damage", "itemReq", "description", "activation", "bonuses"],

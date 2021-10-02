@@ -97,11 +97,6 @@ export default class theexpanseSystemSheetCharacter extends ActorSheet {
         // Sheet color
         data.colorScheme = game.settings.get("theexpanse-system", "colorScheme");
 
-        // Options Tab Preparation
-        // Weapon Groups
-        data.weaponGroups = theexpanseSystem.weaponGroups;
-
-
         // Return template data
         return {
             actor: this.object,
@@ -140,8 +135,14 @@ export default class theexpanseSystemSheetCharacter extends ActorSheet {
     async _onToggleSheet(event) {
         event.preventDefault()
         let newSheet = 'theexpanse-system.theexpanseSystemSheetCharStatBlock'
-        const original = this.actor.getFlag('core', 'sheetClass') || Object.values(CONFIG.Actor.sheetClasses['char']).filter(s => s.default)[0].id
+    
+        const original =
+          this.actor.getFlag('core', 'sheetClass') ||
+          Object.values(CONFIG.Actor.sheetClasses['char']).filter(s => s.default)[0].id
+        console.log('original: ' + original)
+    
         if (original != 'theexpanse-system.theexpanseSystemSheetCharacter') newSheet = 'theexpanse-system.theexpanseSystemSheetCharacter'
+    
         this.actor.openSheet(newSheet)
     }
     
@@ -204,25 +205,10 @@ export default class theexpanseSystemSheetCharacter extends ActorSheet {
             html.find(".guardup-maneuver").change(this._onGuardUpSelect.bind(this));
             html.find(".condition-checkbox").change(this._onChangeCondition.bind(this));
             html.find(".mod-active.icon").click(this._onToggleItemMod.bind(this));
-            html.find(".wgroup-item").click(this._onWeaponGroupToggle.bind(this));
         }
 
         super.activateListeners(html);
     };
-
-    async _onWeaponGroupToggle(event) {
-        event.preventDefault();
-        const wgroupId = event.currentTarget.closest(".feature-controls").dataset.wgroupId.trim();
-        const wgroups = await this.actor.data.data.wgroups;
-        const hasGroup = wgroups.includes(wgroupId);
-        if (hasGroup) {
-            const pos = wgroups.indexOf(wgroupId);
-            wgroups.splice(pos, 1);
-        } else {
-            wgroups.push(wgroupId);
-        }
-        return this.actor.update({"data.wgroups": wgroups});
-    }
 
     _onChangeQuantity(event) {
         event.preventDefault();

@@ -226,8 +226,7 @@ export class theexpanseSystemItem extends Item {
             // resistedDmg: resistedDmg,
             ...arguments[0],
             item: this,
-            actorDmgMod: this.actor ? this.actor.data.data.dmgMod : 0,
-            actorWgroups: this.actor.data.data.wgroups
+            actorDmgMod: this.actor ? this.actor.data.data.dmgMod : 0
         };
         return Dice.itemDamage(damageData);
     };
